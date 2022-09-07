@@ -1,36 +1,38 @@
-* crear py env
+crear py env
 
-py -m venv venv
+> λ py -m venv venv
 
 -m llamar a un modulo (por convencion la arpeta del entorno se llama venv)
 
-* activar entorno virtual
+activar entorno virtual
 
  - linux/mac
- source venv/bin/activate
+ 
+ > λ source venv/bin/activate
 
  - windows
- .\venv\Scripts\activate
+ 
+ > λ .\venv\Scripts\activate
 
 * desactivar entorno virtual
 
- - deactivate
+ > λ deactivate
 
 * alias para activar entorno virtual
 
-- alias avenv=.\venv\Scripts\activate
+> λ alias avenv=.\venv\Scripts\activate
 
 
 * pip install "paquete"
 
 * para ver las dependencias o modulos de tu proyecto 
- - pip freeze
+ > λ  pip freeze
 
-* para crear requirements.txt con las dependencias de tu proyecto
- - pip freeze > requirements.txt
+* crear requirements.txt con las dependencias de tu proyecto
+ > λ  pip freeze > requirements.txt
 
-* para cargar modulos de requirements
- - pip install -r requirements.txt
+* cargar modulos de requirements
+ > λ  pip install -r requirements.txt
 
 
  
