@@ -1,15 +1,21 @@
 def divisors(num):
     divisors = []
     try:
+        
+        # validación con raise
         if num < 0:
             raise ValueError("Error: Sólo se aceptan números positivos")
+        
         for i in range(1, num + 1):
             if num % i == 0:
                 divisors.append(i)
         
         return divisors
     except ValueError as ve:
+        # corresponde al raise
         return ve
+
+    
 
 
 def run():
