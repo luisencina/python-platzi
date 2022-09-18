@@ -1,6 +1,66 @@
 import os
 import random
+from datetime import datetime
 
+HANGMANPICS = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+
+def execution_time(func):
+    def wrapper(*args, **kwargs):
+        initial_time = datetime.now()
+        func(*args, **kwargs)
+        final_time = datetime.now()
+        elapsed_time = final_time - initial_time
+        print("Terminaste el juego en ", str(elapsed_time.total_seconds()), " segundos")
+    return wrapper
 
 def normalize(word):
     replacements = {'á': 'a','é': 'e','í': 'i','ó': 'o','ú': 'u'}
@@ -50,7 +110,8 @@ def game(word):
     
     while userWord != word:
         os.system('clear')
-        print("N de intentos: ", intentos)
+        # print("N de intentos: ", intentos)
+        print(HANGMANPICS[intentos])
         try:
             print(userWord)
             character = str(input("Inserte una letra: "))
@@ -60,24 +121,23 @@ def game(word):
             else:
                 intentos += 1
             
-            if intentos >= 10:
-                print("Perdiste, La palabra era: ", word)
-                exit(0)
+            if intentos >= 7:
+                return print("Perdiste, La palabra era: ", word)
+                
 
         except AssertionError as ae:
             print(ae)
             character = str(input("Inserte una letra: "))
         except KeyboardInterrupt:
-            print("\nAdiós!")
-            exit(0)
+            return print("\nAdiós!")
         
 
-    print("Ganaste! Palabra: ", word)
+    print("Ganaste con "+str(intentos)+" intentos! Palabra: ", word)
 
-
+@execution_time
 def run():
-    word = read()
-    game(word)
+    words = read()
+    game(words)
     
     
 
