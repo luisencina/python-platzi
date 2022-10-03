@@ -43,3 +43,4 @@ activar entorno virtual
 ### [1-basico](https://platzi.com/p/luis-encina/curso/1937-python/diploma/detalle/)
 ###  [2-intermedio](https://platzi.com/p/luis-encina/curso/2255-python-intermedio/diploma/detalle)
 ###  [3-avanzado](https://platzi.com/p/luis-encina/curso/2397-python-profesional/diploma/detalle)
+###  [4-FastAPI_Fundamento]() En curso...
