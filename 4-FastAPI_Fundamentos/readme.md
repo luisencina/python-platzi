@@ -137,4 +137,4 @@ para agregar más query parameters utilizamos &
 @app.get("/{id}/details?age=123")
 ```
 
-![Query Parameters](/docs//query_parameters.png)
+![Query Parameters](/4-FastAPI_Fundamentos/docs/query_parameters.png)
