@@ -260,7 +260,19 @@ def show_person(
 
 ### Path
 
-Importamos Query de fastapi
+Importamos Path de fastapi
 ```
  from fastapi import Path
+
+# Validations: Path Parameters
+@app.get("/person/detail/{person_id}")
+def show_person(
+    person_id: int = Path(
+        ..., 
+        gt=0,
+        title="Person id",
+        description="It's required"
+        )
+):
+    return { person_id: "OK" }
 ```
