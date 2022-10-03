@@ -88,3 +88,29 @@ Redoc:
 > {localhost}/redoc
 
 Ej: Ej: http://127.0.0.1:8000/redoc
+
+# Path Operations
+
+¿Que es un path?
+
+Un path es lo mismo que un route o endpoints y es todo aquello que vaya después de nuestro dominio a la derecha del mismo.
+
+¿Que son las operations?
+
+Un operations es exactamente lo mismo que un método http y tenemos las siguientes más populares: GET, POST, PUT y DELETE
+
+Y otros métodos como OPTIONS, HEAD, PATCH …
+
+Entonces, cuando alguien nos hable de ""Path Operations" realmente lo que hacemos referencia es "realizar peticiones" a un dominio específico con un metodo http.
+
+## Path Operation Decorator
+Denominamos Decorator cuando el "decorador" de la app es consumido con un metodo http y un path específico.
+```
+@app.get("/")
+```
+## Path Operation Function
+La función del operador es la encargada de manejar la lógica del recurso que accedemos.
+```
+def home():
+    return {"Hello": "World"}
+```
