@@ -138,3 +138,58 @@ para agregar más query parameters utilizamos &
 ```
 
 ![Query Parameters](/4-FastAPI_Fundamentos/docs/query_parameters.png)
+
+## Request Body y Response Body
+
+Es el cuerpo de una petición HTTP
+
+```
+@app.post("/person/new")
+def create_person(req):
+    your_code
+```
+
+![Query Parameters](/4-FastAPI_Fundamentos/docs/req_res_body.png)
+
+
+# Antes de continuar...
+
+## Modelos
+
+Un modelo es la representacion de una entidad en codigo, al menos de una manera descriptiva. Una entidad es un objeto de la vida real, que tiene ciertos atributos. Por ejemplo:
+
+- Carro: color, motor, año, marca
+- Persona: edad, nombres, apellidos, altura
+
+Para poder crear modelos en el código se utiliza la librería Pydantic, importando la clase BaseModel:
+
+```
+#Python
+from typing import Optional
+
+#Pydantic
+from pydantic import BaseModel
+
+#FastAPI
+from fastapi import FastAPI
+from fastapi import Body
+
+app = FastAPI()
+
+#Models
+
+class Person(BaseModel):
+    first_name: str
+    last_name: str
+    age: int
+    hair_color: Optional[str] = None
+    is_married: Optional[bool] = None
+
+# Request and Response Body
+@app.post("/person/new")
+def create_person(person: Person = Body(...)):
+    return person
+```
+
+
+![Query Parameters](/4-FastAPI_Fundamentos/docs/req_body.png)
