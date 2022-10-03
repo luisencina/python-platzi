@@ -141,7 +141,8 @@ para agregar más query parameters utilizamos &
 
 ## Request Body y Response Body
 
-Es el cuerpo de una petición HTTP
+Es el cuerpo de una petición HTTP.
+
 
 ```
 @app.post("/person/new")
@@ -198,22 +199,7 @@ def create_person(person: Person = Body(...)):
 
 Todo elemento o atributo del request pueden realizar validaciones.
 
-### Body
-
-Con la librería Optional indicamos cuáles son opcionales
-
-```
-class Person(BaseModel):
-    first_name: str
-    last_name: str
-    age: int
-    hair_color: Optional[str] = None
-    is_married: Optional[bool] = None
-```
-
-### Query
-
-Con Query podemos indicar cualquier tipo de validacion, los mas comunes son:
+Con Body, Query y Path podemos indicar cualquier tipo de validacion, los mas comunes son:
 - None (indica que éste es opcional, al ser opcional fastAPI lo recibe como None)
 - min_length, define la cantidad minima de caracteres
 - max_length, define la cantidad maxima de caracteres
@@ -224,3 +210,57 @@ Con Query podemos indicar cualquier tipo de validacion, los mas comunes son:
 - lt, (int) less than, menor que
 - title, para añadir un titulo en mi parámetro
 - description, añadir una descripción a mi parámetro
+
+con los tres puntos "..." indicamos que ese atributo será obligatorio.
+
+
+### Body
+
+
+En FastAPI, para definir que trabajaremos con Body debemos de importarlo.
+
+> from fastapi import Body
+
+
+Con la librería Optional indicamos cuáles son opcionales
+
+```
+class Person(BaseModel):
+    first_name: str
+    last_name: str
+    age: int
+    hair_color: Optional[str] = None
+    is_married: Optional[bool] = None
+
+@app.post("/person/new")
+def create_person(
+    person: Person = Body(...)
+):
+    return person
+
+```
+
+
+### Query
+
+Importamos Query de fastapi
+```
+ from fastapi import Query
+```
+
+```
+# Validations: Query Parameters
+@app.get("/person/detail")
+def show_person(
+    name: Optional[str] = Query(None, min_length=1, max_length=50),
+    age: int = Query(...)
+):
+    return { name: age }
+```
+
+### Path
+
+Importamos Query de fastapi
+```
+ from fastapi import Path
+```
