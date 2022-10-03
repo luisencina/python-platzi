@@ -38,7 +38,7 @@ activar entorno virtual
  > λ pip install pytz
 
  
-# Certificados de aprobación:
+# Certificados:
 
 ### [1-basico](https://platzi.com/p/luis-encina/curso/1937-python/diploma/detalle/)
 ###  [2-intermedio](https://platzi.com/p/luis-encina/curso/2255-python-intermedio/diploma/detalle)
