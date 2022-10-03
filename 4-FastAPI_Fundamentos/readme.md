@@ -72,3 +72,19 @@ app es la variable que instancia el framework FastAPI.
 
 Una vez listo, vamos a nuestro navegador a la url que nos indica la salida "http://127.0.0.1:8000"
 
+
+# Documentación
+FastAPI por defecto realiza la documentación de los rescursos que exponemos en nuestras API con swagger o redoc.
+
+
+Acceder a la documentación interactiva con Swagger UI:
+
+>{localhost}/docs
+
+Ej: http://127.0.0.1:8000/docs
+
+Redoc:
+
+> {localhost}/redoc
+
+Ej: Ej: http://127.0.0.1:8000/redoc
