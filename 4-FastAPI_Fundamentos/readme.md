@@ -103,7 +103,7 @@ Y otros métodos como OPTIONS, HEAD, PATCH …
 
 Entonces, cuando alguien nos hable de ""Path Operations" realmente lo que hacemos referencia es "realizar peticiones" a un dominio específico con un metodo http.
 
-![Path Operations](/docs/path_operations.png)
+![Path Operations](/4-FastAPI_Fundamentos/docs/path_operations.png)
 
 ## Path Operation Decorator
 Denominamos Decorator cuando el "decorador" de la app es consumido con un metodo http y un path específico.
@@ -124,7 +124,7 @@ Los parámetros de ruta son partes variables de una ruta URL . Por lo general, s
 ```
 @app.get("/{id}")
 ```
-![Path Parameter](/docs/path_parameters.png)
+![Path Parameter](/4-FastAPI_Fundamentos/docs/path_parameters.png)
 
 ## Query Parameter
 Cuando deseamos enviar parámetros opcionales utilizamos query parameters.
