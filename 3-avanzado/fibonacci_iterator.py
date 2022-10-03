@@ -1,4 +1,3 @@
-from html.entities import name2codepoint
 import time
 
 
