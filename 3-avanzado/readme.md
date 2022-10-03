@@ -324,3 +324,9 @@ my_set2 = {5, 6, 7}
 my_set3 = my_set2 ^ my_set1
 print(my_set3) {3, 4, 6, 7}
 ```
+
+# pruebas para eliminar elementos duplicados
+```
+some_list = [1, 1, 2, 2, 4]
+list(set(some_list)) -> [1, 2, 4]
+```

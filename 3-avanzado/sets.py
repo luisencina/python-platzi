@@ -42,3 +42,24 @@ print(my_set)  #output {1, 2, 3, 4, 5}
 my_tuple =  ("hola", "hola", 1, 2)
 my_set2 = set(my_tuple)
 print(my_set2) #Output {'hola', 1}
+
+# pruebas para eliminar elementos duplicados
+# [1, 1, 2, 2, 4] -> [1, 2, 4]
+
+def remove_duplicates_for(some_list):
+    without_duplicates = []
+    for element in some_list:
+        if element not in without_duplicates:
+            without_duplicates.append(element)
+    return without_duplicates
+
+def remove_duplicates_sets(some_list):
+    return list(set(some_list))
+
+def run():
+    randon_list = [1, 1, 2, 2, 4]
+    print(remove_duplicates_for(randon_list))
+    print(remove_duplicates_sets(randon_list))
+
+if __name__ == "__main__":
+    run()
