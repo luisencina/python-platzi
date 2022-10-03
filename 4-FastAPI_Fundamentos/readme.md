@@ -193,3 +193,34 @@ def create_person(person: Person = Body(...)):
 
 
 ![Query Parameters](/4-FastAPI_Fundamentos/docs/req_body.png)
+
+## Validations
+
+Todo elemento o atributo del request pueden realizar validaciones.
+
+### Body
+
+Con la librería Optional indicamos cuáles son opcionales
+
+```
+class Person(BaseModel):
+    first_name: str
+    last_name: str
+    age: int
+    hair_color: Optional[str] = None
+    is_married: Optional[bool] = None
+```
+
+### Query
+
+Con Query podemos indicar cualquier tipo de validacion, los mas comunes son:
+- None (indica que éste es opcional, al ser opcional fastAPI lo recibe como None)
+- min_length, define la cantidad minima de caracteres
+- max_length, define la cantidad maxima de caracteres
+- regex, para realizar validaciones con cadenas (solo para strings)
+- ge, (int) greater or equal than, mayor o igual que
+- le, (int) less or equal than, menor o igual que
+- gt, (int) greater than, mayor que
+- lt, (int) less than, menor que
+- title, para añadir un titulo en mi parámetro
+- description, añadir una descripción a mi parámetro
