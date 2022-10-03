@@ -330,3 +330,25 @@ print(my_set3) {3, 4, 6, 7}
 some_list = [1, 1, 2, 2, 4]
 list(set(some_list)) -> [1, 2, 4]
 ```
+
+# Fechas
+
+Para acceder a las fechas en python necesitamos el modulo "datetime" que viene en python
+
+```
+from datetime import datetime
+
+my_datetime = datetime.now() 
+# 2022-10-03 12:56:03.764864
+
+```
+
+para formateo de datos utilizamos el método string format time (strftime)
+```
+my_str = my_datetime.strftime("%d/%m/%Y")
+# 03/10/2022
+
+my_str = my_datetime.strftime("Estamos en el año %Y")
+# Estamos en el año 2022
+
+```
