@@ -200,3 +200,127 @@ for element in my_list:
 # 5
 
 ```
+
+## SET
+
+SET, estructura de datos inmutables y únicos.
+
+```
+my_set = {3, 4, 5}
+print(my_set) # {3, 4, 5}
+```
+
+Set de diferentes tipos de datos
+
+```
+my_set = {1.0, "Hi", (1, 4, 7)}
+print(my_set) # {1.0, "Hi", (1, 4, 7)}
+```
+
+ejemplo de operaciones sobre sets 
+
+```
+my_set = {1, 2, 3} 
+print(my_set) #Output {1, 2, 3} 
+```
+
+añadiendo un elemento al set 
+
+```
+my_set.add(4) 
+print(my_set) #Output {1, 2, 3, 4}
+```
+
+añadiendo varios elementos al set, python ignorará elementos repetidos 
+
+```
+my_set.update([1, 5, 6]) 
+print(my_set) #Output {1, 2, 3, 4, 5, 6}
+```
+
+Eliminado elementos del set 
+
+```
+my_set.discard(1) 
+print(my_set) #Output {2, 3, 4, 5, 6}
+```
+
+Borrando un elemento aleatorio 
+
+```
+my_set.pop()
+print(my_set) #Output el set menos un elemento aleatorio 
+```
+
+limpiar el set 
+
+```
+my_set.clear()
+print(my_set) # Output set() 
+```
+
+### Podemos utilizar estructuras de datos existentes para transformarlas a sets utilizando el método set:
+
+usando listas para crear sets
+
+```
+my_list = [1, 2, 3, 3, 4, 5]
+my_set = set(my_list)
+print(my_set)  #output {1, 2, 3, 4, 5}
+```
+
+#usando tuplas para crear sets 
+
+```
+my_tuple =  ("hola", "hola", 1, 2)
+my_set2 = set(my_tuple)
+print(my_set2) #Output {'hola', 1}
+```
+
+### unión de sets
+
+Combina todos los elementos sin repetirlos
+
+```
+my_set1 = {3, 4, 5}
+my_set2 = {5, 6, 7}
+
+my_set3 = my_set1 | my_set2
+print(my_set3) {3, 4, 5, 6, 7}
+```
+
+### intersección de sets
+
+Une solo los elementos en comun
+```
+my_set1 = {3, 4, 5}
+my_set2 = {5, 6, 7}
+
+my_set3 = my_set1 & my_set2
+print(my_set3) {5}
+```
+
+### diferencias de sets
+
+Nos entrega como resultado el set obtenido de eliminar de un primer set todos los elementos que comunes o que se repiten del segundo set.
+```
+my_set1 = {3, 4, 5}
+my_set2 = {5, 6, 7}
+
+my_set3 = my_set1 - my_set2
+print(my_set3) {3, 4}
+
+my_set3 = my_set2 - my_set1
+print(my_set3) {6, 7}
+```
+
+### diferencias simetricas
+
+devuelve todos los elementos de dos sets sin los elementos en comunes
+
+```
+my_set1 = {3, 4, 5}
+my_set2 = {5, 6, 7}
+my_set3 = my_set2 ^ my_set1
+print(my_set3) {3, 4, 6, 7}
+```
