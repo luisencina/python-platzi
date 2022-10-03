@@ -34,5 +34,7 @@ activar entorno virtual
 * cargar modulos de requirements
  > λ  pip install -r requirements.txt
 
+* trabajar con timezones en python
+ > λ pip install pytz
 
  
