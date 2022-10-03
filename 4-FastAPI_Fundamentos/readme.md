@@ -103,6 +103,8 @@ Y otros métodos como OPTIONS, HEAD, PATCH …
 
 Entonces, cuando alguien nos hable de ""Path Operations" realmente lo que hacemos referencia es "realizar peticiones" a un dominio específico con un metodo http.
 
+![Path Operations](/docs/path_operations.png)
+
 ## Path Operation Decorator
 Denominamos Decorator cuando el "decorador" de la app es consumido con un metodo http y un path específico.
 ```
@@ -114,3 +116,25 @@ La función del operador es la encargada de manejar la lógica del recurso que a
 def home():
     return {"Hello": "World"}
 ```
+## Path Parameter
+son los parámetros que son enviados en un path específico.
+Si el path en cuestión requiere un parámetro éste es OBLIGATORIO para que la petición entre a ese recurso.
+
+Los parámetros de ruta son partes variables de una ruta URL . Por lo general, se utilizan para señalar un recurso específico dentro de una colección, como un usuario identificado por ID. Una URL puede tener varios parámetros de ruta.
+```
+@app.get("/{id}")
+```
+![Path Parameter](/docs/path_parameters.png)
+
+## Query Parameter
+Cuando deseamos enviar parámetros opcionales utilizamos query parameters.
+
+Un Query Patameter es un conjunto de elementos opcionales los cuales son añadidos al finalizar la ruta, con el objetivo de definir contenido o acciones en la url,
+estos elementos se añaden despues de un ?
+para agregar más query parameters utilizamos &
+
+```
+@app.get("/{id}/details?age=123")
+```
+
+![Query Parameters](/docs//query_parameters.png)
