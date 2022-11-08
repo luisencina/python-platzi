@@ -276,3 +276,72 @@ def show_person(
 ):
     return { person_id: "OK" }
 ```
+
+### Validacion de body params
+
+fastapi no realiza las validaciones de los atributos del body, para esto, necesitamos otra librería.
+pydantic posee un metodo de validación de atributos para un payload gracias a "Field"
+
+```
+from pydantic import Field
+
+class Person(BaseModel):
+    first_name: str = Field(
+        ...,
+        min_length=1,
+        max_length=50
+    )
+    last_name: str = Field(
+        ...,
+        min_length=1,
+        max_length=50
+    )
+    age: int = Field(
+        ...,
+        gt=0,
+        le=115
+    )
+    hair_color: Optional[str] = Field(default=None)
+    is_married: Optional[bool] = Field(default=None)
+```
+
+En caso que querramos realizar validaciones con Enums
+
+```
+
+from enum import Enum
+from pydantic import Field
+
+class HairColor(Enum):
+    white = "white"
+    brown = "brown"
+    black = "black"
+    yellow = "yellow"
+    blonde = "blonde"
+    red = "red"
+
+
+class Person(BaseModel):
+    first_name: str = Field(
+        ...,
+        min_length=1,
+        max_length=50
+    )
+    last_name: str = Field(
+        ...,
+        min_length=1,
+        max_length=50
+    )
+    age: int = Field(
+        ...,
+        gt=0,
+        le=115
+    )
+    hair_color: Optional[HairColor] = Field(default=None)
+    is_married: Optional[bool] = Field(default=None)
+```
+
+
+### Tipos de datos en Python para validaciones con pydantic
+
+![Query Parameters](/4-FastAPI_Fundamentos/docs/types.png)
